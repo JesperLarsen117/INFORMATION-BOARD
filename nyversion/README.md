@@ -1,2 +1,0 @@
-# INFORMATION-BOARD
-proejct
