@@ -14,6 +14,7 @@ app.get('/', (req, res) => {
         .then(data => {
             
             const shownews = data.news;
+            const showActivity = data.activity;
 
             //Render til EJS side
             res.render('../views/pages/index', {
@@ -21,10 +22,9 @@ app.get('/', (req, res) => {
                 videotitle: "Video",
                 aktivitetertitle: "Aktiviteter",
                 news: shownews,
+                activity: showActivity,
 
             });
         })
     });
-    
 }
-
