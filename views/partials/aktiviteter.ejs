@@ -1,0 +1,10 @@
+<h1><%- aktivitetertitle -%></h1>
+
+<div>
+    <% for (let i =0; i < activity.length;  i++ ) { %>
+        <div>
+        <h2><%- activity[i].vcSubject -%></h2>
+    <p><%- activity[i].vcClassroom -%></p>
+    </div>    
+        <% } %>
+    </div>
