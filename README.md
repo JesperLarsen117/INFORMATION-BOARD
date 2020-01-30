@@ -1,2 +1,2 @@
 # INFORMATION-BOARD
-proejct
+project
