@@ -5,7 +5,6 @@ const fetch = require('node-fetch');
 module.exports = (app) => {
 
 app.get('/', (req, res) => {
-    console.log("test");
         //Fetch API data
         fetch('https://infoboard.mediehuset.net/api/')
         //parse data as json

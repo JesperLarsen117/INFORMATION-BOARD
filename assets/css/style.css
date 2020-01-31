@@ -1,0 +1,19 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: whitesmoke;
+  color: #161616;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.activity {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 8px;
+}
+/*# sourceMappingURL=style.css.map */

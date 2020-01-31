@@ -1,0 +1,13 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: whitesmoke;
+    color: rgb(22, 22, 22);
+    font-family: 'Courier New', Courier, monospace;
+}
+.activity{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 8px;
+}

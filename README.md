@@ -1,2 +1,2 @@
 # INFORMATION-BOARD
-project
+Project med NodeJS, Fetch, Express & EJS
