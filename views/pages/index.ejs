@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Style -->
-    <link rel="stylesheet" href="../../assets/css/style.css"> 
+    <link rel="stylesheet" href="../../assets/css/style.css">
     <title>Dashboard</title>
 </head>
-<body>
+
+<body onload="startTime()">
+
+    <div id="localTime"></div>
+
     <!-- Nyheder -->
     <%- include ('../partials/nyheder') -%>
     <!-- Videos -->
@@ -19,4 +24,5 @@
     <!-- Script -->
     <script src="../../assets/js/main.js"></script>
 </body>
+
 </html>
