@@ -1,19 +1,457 @@
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  background-color: whitesmoke;
+  background-color: white;
   color: #161616;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: sans-serif;
 }
 
-.activity {
+.container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  gap: 8px;
+  -ms-grid-columns: 20% 1fr;
+      grid-template-columns: 20% 1fr;
+  -ms-grid-rows: 30% 1fr 1fr;
+      grid-template-rows: 30% 1fr 1fr;
+  height: 100vh;
+  width: 100vw;
+}
+
+.container .videoContainer {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  padding: 1em;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #a0a0a0;
+}
+
+.container .nyhedContainer {
+  -ms-grid-column: 1;
+  grid-column: 1;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  grid-row: 2 / 4;
+  padding: 1em;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #a0a0a0;
+}
+
+.container .activityContainer {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  grid-row: 1 / 4;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #a0a0a0;
+}
+
+#localTime {
+  position: absolute;
+  bottom: .1em;
+  left: .1em;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.header {
+  font-weight: bold;
+  margin: 0 0 .5em 0;
+}
+
+.header span {
+  font-weight: 100;
+}
+
+.classContainer {
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  padding: 1em;
+}
+
+.underetage {
+  background-color: #e6e6e6;
+}
+
+.roomContainer {
+  display: -ms-grid;
+  display: grid;
+  height: 100%;
+}
+
+.schoolContainer {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[32];
+      grid-template-columns: repeat(32, 1fr);
+}
+
+.schoolContainer .classRoom1 {
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 2;
+  grid-column: 5 / span 2;
+  background-color: #2f2f2f;
+  height: 125px;
+  width: 100%;
+}
+
+.schoolContainer .classRoom2 {
+  -ms-grid-column: 9;
+  -ms-grid-column-span: 2;
+  grid-column: 9 / span 2;
+  background-color: #2f2f2f;
+  height: 125px;
+  width: 100%;
+}
+
+.schoolContainer .classRoom3 {
+  -ms-grid-column: 14;
+  -ms-grid-column-span: 2;
+  grid-column: 14 / span 2;
+  background-color: #2f2f2f;
+  height: 125px;
+  width: 100%;
+}
+
+.schoolContainer .classRoom4 {
+  -ms-grid-column: 19;
+  -ms-grid-column-span: 2;
+  grid-column: 19 / span 2;
+  background-color: #2f2f2f;
+  height: 125px;
+  width: 100%;
+}
+
+.schoolContainer .classRoom5 {
+  -ms-grid-column: 31;
+  -ms-grid-column-span: 2;
+  grid-column: 31 / span 2;
+  background-color: #2f2f2f;
+  height: 125px;
+  width: 100%;
+}
+
+.schoolContainer .hallway {
+  position: relative;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 32;
+  grid-column: 1 / span 32;
+  -ms-grid-row: 2;
+  grid-row: 2;
+  background-color: #2f2f2f;
+  height: 80px;
+  width: 100%;
+}
+
+.schoolContainer .hallway .textBox {
+  position: absolute;
+  top: -3em;
+  background-color: #37ff6c;
+  display: inline-block;
+  padding: .4em;
+  color: white;
+  z-index: 200;
+}
+
+.schoolContainer .hallway .textBox::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 1.6em;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  -webkit-transform: rotate(45deg) translateX(-50%);
+          transform: rotate(45deg) translateX(-50%);
+  background-color: #37ff6c;
+}
+
+.schoolContainer .hallway #door {
+  position: absolute;
+  left: 7em;
+}
+
+.schoolContainer .hallway #here {
+  position: absolute;
+  top: 0.4em;
+  left: 2.5em;
+}
+
+.schoolContainer .hallway #doorway {
+  position: absolute;
+  left: 6em;
+}
+
+.schoolContainer .hallway #doorUnder {
+  position: absolute;
+  left: 12em;
+}
+
+.schoolContainer .hallway #hereUnder {
+  position: absolute;
+  top: 0.4em;
+  left: 2.7em;
+}
+
+.schoolContainer .hallway #doorwayUnder {
+  position: absolute;
+  left: 11em;
+}
+
+.schoolContainer .hallway #doorwayUnder1 {
+  position: absolute;
+  left: 55em;
+}
+
+.schoolContainer .hallway #doorway {
+  position: absolute;
+  left: 5em;
+}
+
+.schoolContainer .hallway #doorway1 {
+  position: absolute;
+  left: 51.5em;
+}
+
+.schoolContainer .classRoom6 {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-column: 3 / span 2;
+  background-color: #2f2f2f;
+  -ms-grid-row: 3;
+  grid-row: 3;
+  height: 125px;
+  width: 100%;
+}
+
+.schoolContainer .classRoom7 {
+  -ms-grid-column: 7;
+  -ms-grid-column-span: 2;
+  grid-column: 7 / span 2;
+  background-color: #2f2f2f;
+  -ms-grid-row: 3;
+  grid-row: 3;
+  height: 125px;
+  width: 100%;
+}
+
+.schoolContainer .classRoom8 {
+  -ms-grid-column: 9;
+  -ms-grid-column-span: 2;
+  grid-column: 9 / span 2;
+  background-color: #2f2f2f;
+  -ms-grid-row: 3;
+  grid-row: 3;
+  height: 125px;
+  width: 100%;
+}
+
+.schoolContainer .classRoom9 {
+  -ms-grid-column: 16;
+  -ms-grid-column-span: 2;
+  grid-column: 16 / span 2;
+  background-color: #2f2f2f;
+  -ms-grid-row: 3;
+  grid-row: 3;
+  height: 125px;
+  width: 100%;
+}
+
+.schoolContainer .classRoom10 {
+  -ms-grid-column: 19;
+  -ms-grid-column-span: 2;
+  grid-column: 19 / span 2;
+  background-color: #2f2f2f;
+  -ms-grid-row: 3;
+  grid-row: 3;
+  height: 125px;
+  width: 100%;
+}
+
+.schoolContainer .classRoom11 {
+  -ms-grid-column: 23;
+  -ms-grid-column-span: 2;
+  grid-column: 23 / span 2;
+  background-color: #2f2f2f;
+  -ms-grid-row: 3;
+  grid-row: 3;
+  height: 125px;
+  width: 100%;
+}
+
+.schoolContainer .classRoom12 {
+  -ms-grid-column: 26;
+  -ms-grid-column-span: 2;
+  grid-column: 26 / span 2;
+  background-color: #2f2f2f;
+  -ms-grid-row: 3;
+  grid-row: 3;
+  height: 125px;
+  width: 100%;
+}
+
+.schoolContainer .classRoom13 {
+  -ms-grid-column: 28;
+  -ms-grid-column-span: 2;
+  grid-column: 28 / span 2;
+  background-color: #2f2f2f;
+  -ms-grid-row: 3;
+  grid-row: 3;
+  height: 125px;
+  width: 100%;
+}
+
+.schoolContainer .classRoom14 {
+  -ms-grid-column: 31;
+  -ms-grid-column-span: 2;
+  grid-column: 31 / span 2;
+  background-color: #2f2f2f;
+  -ms-grid-row: 3;
+  grid-row: 3;
+  height: 125px;
+  width: 100%;
+}
+
+.schoolContainer .classRoom15 {
+  position: absolute;
+  background-color: #2f2f2f;
+  height: 50px;
+  width: 80px;
+  bottom: -3em;
+  left: 3.5em;
+}
+
+.schoolContainer .classRoom16 {
+  position: absolute;
+  background-color: #2f2f2f;
+  height: 50px;
+  width: 80px;
+  bottom: -3em;
+  left: 9em;
+}
+
+.schoolContainer .classRoom20 {
+  -ms-grid-column: 8;
+  -ms-grid-column-span: 2;
+  grid-column: 8 / span 2;
+  background-color: #2f2f2f;
+  height: 125px;
+  width: 100%;
+}
+
+.schoolContainer .classRoom21 {
+  -ms-grid-column: 14;
+  -ms-grid-column-span: 2;
+  grid-column: 14 / span 2;
+  background-color: #2f2f2f;
+  height: 125px;
+  width: 100%;
+}
+
+.schoolContainer .classRoom22 {
+  -ms-grid-column: 20;
+  -ms-grid-column-span: 2;
+  grid-column: 20 / span 2;
+  background-color: #2f2f2f;
+  height: 125px;
+  width: 100%;
+}
+
+.schoolContainer .classRoom23 {
+  -ms-grid-column: 11;
+  -ms-grid-column-span: 2;
+  grid-column: 11 / span 2;
+  background-color: #2f2f2f;
+  -ms-grid-row: 3;
+  grid-row: 3;
+  height: 125px;
+  width: 100%;
+}
+
+.schoolContainer .classRoom24 {
+  -ms-grid-column: 17;
+  -ms-grid-column-span: 2;
+  grid-column: 17 / span 2;
+  background-color: #2f2f2f;
+  -ms-grid-row: 3;
+  grid-row: 3;
+  height: 125px;
+  width: 100%;
+}
+
+.uddannelser {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 5em;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2em;
+}
+
+.uddannelser p .blocks {
+  margin-right: 1em;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+}
+
+.uddannelser p .magenta {
+  background-color: #A43380;
+}
+
+.uddannelser p .redColor {
+  background-color: #DD5050;
+}
+
+.uddannelser p .greenColor {
+  background-color: #94B144;
+}
+
+.uddannelser p .blueColor {
+  background-color: #567EBE;
+}
+
+.uddannelser p .lightBlueColor {
+  background-color: #46B2FB;
+}
+
+.uddannelser p .darkGreyColor {
+  background-color: #A4A4A4;
+}
+
+.uddannelser p .orangeColor {
+  background-color: #F9C843;
+}
+
+.nyhedContainer {
+  padding: 1em 2em;
+}
+
+.nyhedContainer h2 {
+  margin: 1em 0 .5em 0;
+}
+
+.nyhedContainer li {
+  margin: .5em .5em .5em 1em;
+}
+
+#logo {
+  position: absolute;
+  bottom: 2em;
+  right: 2em;
+  width: 10%;
 }
 /*# sourceMappingURL=style.css.map */
