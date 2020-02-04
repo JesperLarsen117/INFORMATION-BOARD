@@ -1,13 +1,481 @@
-*{
+$classColor: #2f2f2f;
+
+* {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
-body{
-    background-color: whitesmoke;
+
+body {
+    background-color: white;
     color: rgb(22, 22, 22);
-    font-family: 'Courier New', Courier, monospace;
+    font-family: sans-serif;
+
 }
-.activity{
+
+body,
+html {
+    // overflow: hidden;
+}
+
+.activity {}
+
+.container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    gap: 8px;
+    grid-template-columns: 20% 1fr;
+    grid-template-rows: 30% 1fr 1fr;
+    height: 100vh;
+    width: 100vw;
+
+    .videoContainer {
+        grid-row: 1;
+        padding: 1em;
+        width: 100%;
+        height: 100%;
+        background:white;
+        // border: 1px solid #a0a0a0;
+
+    }
+
+    .nyhedContainer {
+        grid-column: 1;
+        grid-row: 2 / 4;
+        padding: 1em;
+        width: 100%;
+        height: 100%;
+        background:rgb(241, 241, 241);
+        // border: 1px solid #a0a0a0;
+
+    }
+
+    .activityContainer {
+        grid-column: 2;
+        grid-row: 1 / 4;
+        // background-color: green;
+        width: 100%;
+        height: 100%;
+        // border: 1px solid #a0a0a0;
+    }
+}
+
+#localTime {
+    position: absolute;
+    bottom: .1em;
+    left: .1em;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+// aktivitet
+.header {
+    font-weight: bold;
+    text-align:right;
+
+    span {
+        font-weight: 100;
+    }
+
+    margin: 0 0 .5em 0;
+}
+
+.header2{
+    margin-top:1.5em;
+}
+
+.classContainer {
+    grid-template-rows: 1fr 1fr;
+    padding: 1em;
+}
+
+.underetage {
+    background-color: #ffffff;
+}
+
+.roomContainer {
+    display: grid;
+    height: 100%;
+}
+
+.schoolContainer {
+    position: relative;
+    top:5%;
+    display: grid;
+    grid-template-columns: repeat(32, 1fr);
+
+    .N237a {
+        grid-column: 5 / span 2;
+        background-color: $classColor;
+        height: 125px;
+        width: 100%;
+
+    }
+
+    .N234 {
+        grid-column: 9 / span 2;
+        background-color: $classColor;
+        height: 125px;
+        width: 100%;
+
+    }
+
+    .N231a {
+        grid-column: 14 / span 2;
+        background-color: $classColor;
+        height: 125px;
+        width: 100%;
+
+    }
+
+    .N230 {
+        grid-column: 19 / span 2;
+        background-color: $classColor;
+        height: 125px;
+        width: 100%;
+    }
+
+    .N228 {
+        grid-column: 31 / span 2;
+        background-color: $classColor;
+        height: 125px;
+        width: 100%;
+    }
+
+    .hallway {
+        position: relative;
+        grid-column: 1 / span 32;
+        grid-row: 2;
+        background-color: $classColor;
+        height: 80px;
+        width: 100%;
+
+        .textBox {
+            position: absolute;
+            top: -3em;
+            background-color: #37ff6c;
+            display: inline-block;
+            padding: .4em;
+            color: white;
+        
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+            z-index: 200;
+
+            &::before {
+                content: '';
+                position: absolute;
+                z-index: -1;
+                top: 1.6em;
+                left: 50%;
+                width: 20px;
+                height: 20px;
+                transform: rotate(45deg) translateX(-50%);
+                background-color: #37ff6c;
+            }
+        }
+
+        #door {
+            position: absolute;
+            left: 7em;
+        }
+
+        #here {
+            position: absolute;
+            top: 0.4em;
+            left: 2.5em;
+        }
+
+        #doorway {
+            position: absolute;
+            left: 6em;
+        }
+
+        #doorUnder {
+            position: absolute;
+            left: 12em;
+        }
+
+        #hereUnder {
+            position: absolute;
+            top: 0.4em;
+            left: 2.7em;
+        }
+
+        #doorwayUnder {
+            position: absolute;
+            left: 11em;
+        }
+
+        #doorwayUnder1 {
+            position: absolute;
+            left: 55em;
+        }
+
+        #doorway {
+            position: absolute;
+            left: 5em;
+        }
+
+        #doorway1 {
+            position: absolute;
+            left: 51.5em;
+        }
+    }
+
+    .N214 {
+        grid-column: 3 / span 2;
+        background-color: $classColor;
+        grid-row: 3;
+        height: 125px;
+        width: 100%;
+    }
+
+    .N215a {
+        grid-column: 7 / span 2;
+        background-color: $classColor;
+        grid-row: 3;
+        height: 125px;
+        width: 100%;
+    }
+
+    .N215 {
+        grid-column: 9 / span 2;
+        background-color: $classColor;
+        grid-row: 3;
+        height: 125px;
+        width: 100%;
+    }
+
+    .N218 {
+        grid-column: 16 / span 2;
+        background-color: $classColor;
+        grid-row: 3;
+        height: 125px;
+        width: 100%;
+    }
+
+    .N219 {
+        grid-column: 19 / span 2;
+        background-color: $classColor;
+        grid-row: 3;
+        height: 125px;
+        width: 100%;
+    }
+
+    .N221 {
+        grid-column: 23 / span 2;
+        background-color: $classColor;
+        grid-row: 3;
+        height: 125px;
+        width: 100%;
+    }
+
+    .N223 {
+        grid-column: 26 / span 2;
+        background-color: $classColor;
+        grid-row: 3;
+        height: 125px;
+        width: 100%;
+    }
+
+    .N225 {
+        grid-column: 28 / span 2;
+        background-color: $classColor;
+        grid-row: 3;
+        height: 125px;
+        width: 100%;
+    }
+
+    .N226 {
+        grid-column: 31 / span 2;
+        background-color: $classColor;
+        grid-row: 3;
+        height: 125px;
+        width: 100%;
+    }
+
+    .N210 {
+        position: absolute;
+        background-color: $classColor;
+        height: 50px;
+        width: 80px;
+        bottom: -3em;
+        left: 3.5em;
+    }
+
+    .N214a {
+        position: absolute;
+        background-color: $classColor;
+        height: 50px;
+        width: 80px;
+        bottom: -3em;
+        left: 9em;
+    }
+
+    .N122 {
+        grid-column: 8 / span 2;
+        background-color: $classColor;
+        height: 125px;
+        width: 100%;
+    }
+
+    .N121 {
+        grid-column: 14 / span 2;
+        background-color: $classColor;
+        height: 125px;
+        width: 100%;
+    }
+
+    .N120 {
+        grid-column: 20 / span 2;
+        background-color: $classColor;
+        height: 125px;
+        width: 100%;
+    }
+
+    .N112b {
+        grid-column: 11 / span 2;
+        background-color: $classColor;
+        grid-row: 3;
+        height: 125px;
+        width: 100%;
+    }
+
+    .N112 {
+        grid-column: 17 / span 2;
+        background-color: $classColor;
+        grid-row: 3;
+        height: 125px;
+        width: 100%;
+    }
+}
+
+.uddannelser {
+    position: absolute;
+    top: 50%;
+    width:80%;
+    transform: translateY(-50%);
+    left:24em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    background:rgb(230, 230, 230);
+    padding:10px;
+    padding-left:40px;
+    padding-right:40px;
+    gap: 2em;
+
+    p {
+        .blocks {
+            margin-right: 1em;
+            display: inline-block;
+            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+            width: 15px;
+            height: 15px;
+        }
+
+        .magenta {
+            background-color: #A43380;
+        }
+
+        .redColor {
+            background-color: #DD5050;
+        }
+
+        .greenColor {
+            background-color: #94B144;
+        }
+
+        .blueColor {
+            background-color: #567EBE;
+        }
+
+        .lightBlueColor {
+            background-color: #46B2FB;
+        }
+
+        .darkGreyColor {
+            background-color: #A4A4A4;
+        }
+
+        .orangeColor {
+            background-color: #F9C843;
+        }
+
+        .default {
+            background-color: #2F2F2F;
+        }
+    }
+}
+
+// NYHEDER
+.nyhedContainer {
+    padding: 1em 2em;
+
+    h2 {
+        margin: 1em 0 .5em 0;
+    }
+
+    li {
+        margin: .5em .5em .5em 1em;
+    }
+}
+
+#logo {
+    position: absolute;
+    bottom: 2em;
+    right: 2em;
+    width: 10%;
+}
+
+.classNumber {
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    margin-top: 0.2em
+}
+
+.className {
+    text-align: center;
+    font-size: 80%;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    margin-top: 0.2em
+}
+
+.classType {
+    text-align: center;
+    font-size: 80%;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    margin-top: 2em
+}
+
+.magenta {
+    background-color: #A43380 !important;
+}
+
+.redColor {
+    background-color: #DD5050 !important;
+}
+
+.greenColor {
+    background-color: #94B144 !important;
+}
+
+.blueColor {
+    background-color: #567EBE !important;
+}
+
+.lightBlueColor {
+    background-color: #9ed8ff !important;
+}
+
+.darkGreyColor {
+    background-color: #A4A4A4 !important;
+}
+
+.orangeColor {
+    background-color: #F9C843 !important;
+}
+
+.default {
+    background-color: #2F2F2F !important;
 }

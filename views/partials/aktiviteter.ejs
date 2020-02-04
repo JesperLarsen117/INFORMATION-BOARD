@@ -1,13 +1,281 @@
-<h1><%- aktivitetertitle -%></h1>
+<div class="activityContainer">
+  <% for (let i =0; i < uddanelseColor.length; i++ ) { %> <% } %>
+  <h1><%- uddanelseColor[1] %></h1>
 
-<div class="activity">
-    <% for (let i =0; i < activity.length;  i++ ) { %>
-    <div>
-        <h2><%- activity[i].name -%></h2>
-        <p><%- activity[i].friendly_name -%></p>
-        <p><%- activity[i].classroom -%></p>
-        <p><%- activity[i].class -%></p>
-        <p><%- activity[i].time -%></p>
+  <div class="roomContainer">
+    <div class="uddannelser">
+      <p><span class="blocks magenta"></span>Mediegrafikere</p>
+      <p><span class="blocks greenColor"></span>Digital media</p>
+      <p><span class="blocks blueColor"></span>Grafisk tekniker</p>
+      <p><span class="blocks redColor"></span>Webudvikler</p>
+      <p><span class="blocks orangeColor"></span>Brobygger</p>
+      <p><span class="blocks lightBlueColor"></span>Efteruddannelse</p>
+      <p><span class="blocks darkGreyColor"></span>Værkstedsaktiviteter</p>
     </div>
-    <% } %>
+    <div class="classContainer overetage">
+      <h2 class="header">OVERETAGE <span>(N214 - N228)</span></h2>
+      <div class="schoolContainer">
+        <div class="room N237a" data-room="N237a"></div>
+        <div class="room N234" data-room="N234"></div>
+        <div class="room N231a" data-room="N231a"></div>
+        <div class="room N230" data-room="N230"></div>
+        <div class="room N228" data-room="N228"></div>
+        <div class="hallway">
+          <div class="textBox">
+            <p>DU ER HER</p>
+          </div>
+          <svg
+            id="door"
+            xmlns="http://www.w3.org/2000/svg"
+            width="63.472"
+            height="42.733"
+            viewBox="0 0 63.472 42.733"
+          >
+            <path
+              id="Path_1"
+              data-name="Path 1"
+              d="M0,0,42.52-.1,41,6H0Z"
+              transform="translate(10.381 42.709) rotate(-104)"
+              fill="#d8d8d8"
+              opacity="0.6"
+            />
+            <path
+              id="Path_2"
+              data-name="Path 2"
+              d="M823.685,768s-11.465,24.715-47.051,38.116"
+              transform="translate(-760.667 -765.408)"
+              fill="none"
+              stroke="#d8d8d8"
+              stroke-width="1"
+              stroke-dasharray="10 10"
+              opacity="0.6"
+            />
+          </svg>
+          <svg
+            id="here"
+            xmlns="http://www.w3.org/2000/svg"
+            width="22"
+            height="22"
+            viewBox="0 0 22 22"
+          >
+            <g
+              id="Ellipse_1"
+              data-name="Ellipse 1"
+              fill="none"
+              stroke="#37ff6c"
+              stroke-width="1"
+            >
+              <circle cx="11" cy="11" r="11" stroke="none" />
+              <circle cx="11" cy="11" r="10.5" fill="none" />
+            </g>
+            <rect
+              id="Rectangle_32"
+              data-name="Rectangle 32"
+              width="2.643"
+              height="21.141"
+              transform="translate(2.591 4.46) rotate(-45)"
+              fill="#37ff6c"
+            />
+            <rect
+              id="Rectangle_33"
+              data-name="Rectangle 33"
+              width="2.643"
+              height="21.141"
+              transform="translate(17.54 2.591) rotate(45)"
+              fill="#37ff6c"
+            />
+          </svg>
+
+          <svg
+            id="doorway"
+            xmlns="http://www.w3.org/2000/svg"
+            width="4"
+            height="100%"
+            viewBox="0 0 3 111"
+          >
+            <rect
+              id="Rectangle_31"
+              data-name="Rectangle 31"
+              width="40"
+              height="3"
+              transform="translate(0 111) rotate(-90)"
+              fill="#d8d8d8"
+            />
+            <rect
+              id="Rectangle_29"
+              data-name="Rectangle 29"
+              width="41"
+              height="3"
+              transform="translate(0 41) rotate(-90)"
+              fill="#d8d8d8"
+            />
+          </svg>
+          <svg
+            id="doorway1"
+            xmlns="http://www.w3.org/2000/svg"
+            width="4"
+            height="100%"
+            viewBox="0 0 3 111"
+          >
+            <rect
+              id="Rectangle_31"
+              data-name="Rectangle 31"
+              width="40"
+              height="3"
+              transform="translate(0 111) rotate(-90)"
+              fill="#d8d8d8"
+            />
+            <rect
+              id="Rectangle_29"
+              data-name="Rectangle 29"
+              width="41"
+              height="3"
+              transform="translate(0 41) rotate(-90)"
+              fill="#d8d8d8"
+            />
+          </svg>
+        </div>
+        <div class="room N214" data-room="N214"></div>
+        <div class="room N215a" data-room="N215a"></div>
+        <div class="room N215" data-room="N215"></div>
+        <div class="room N218" data-room="N218"></div>
+        <div class="room N219" data-room="N219"></div>
+        <div class="room N221" data-room="N221"></div>
+        <div class="room N223" data-room="N223"></div>
+        <div class="room N225" data-room="N225"></div>
+        <div class="room N226" data-room="N226"></div>
+
+        <div class="room N210" data-room="N210"></div>
+        <div class="room N214a" data-room="N214a"></div>
+      </div>
+    </div>
+
+    <div class="classContainer underetage">
+      <h2 class="header header2">UNDERETAGE <span>(N114 - N128)</span></h2>
+      <div class="schoolContainer">
+        <div class="room N122" data-room="N122"></div>
+        <div class="room N121" data-room="N121"></div>
+        <div class="room N120" data-room="N120"></div>
+        <div class="hallway">
+          <div class="textBox">
+            <p>DU ER HER</p>
+          </div>
+
+          <svg
+            id="doorUnder"
+            xmlns="http://www.w3.org/2000/svg"
+            width="63.472"
+            height="42.733"
+            viewBox="0 0 63.472 42.733"
+          >
+            <path
+              id="Path_1"
+              data-name="Path 1"
+              d="M0,0,42.52-.1,41,6H0Z"
+              transform="translate(10.381 42.709) rotate(-104)"
+              fill="#d8d8d8"
+              opacity="0.6"
+            />
+            <path
+              id="Path_2"
+              data-name="Path 2"
+              d="M823.685,768s-11.465,24.715-47.051,38.116"
+              transform="translate(-760.667 -765.408)"
+              fill="none"
+              stroke="#d8d8d8"
+              stroke-width="1"
+              stroke-dasharray="10 10"
+              opacity="0.6"
+            />
+          </svg>
+          <svg
+            id="hereUnder"
+            xmlns="http://www.w3.org/2000/svg"
+            width="22"
+            height="22"
+            viewBox="0 0 22 22"
+          >
+            <g
+              id="Ellipse_1"
+              data-name="Ellipse 1"
+              fill="none"
+              stroke="#37ff6c"
+              stroke-width="1"
+            >
+              <circle cx="11" cy="11" r="11" stroke="none" />
+              <circle cx="11" cy="11" r="10.5" fill="none" />
+            </g>
+            <rect
+              id="Rectangle_32"
+              data-name="Rectangle 32"
+              width="2.643"
+              height="21.141"
+              transform="translate(2.591 4.46) rotate(-45)"
+              fill="#37ff6c"
+            />
+            <rect
+              id="Rectangle_33"
+              data-name="Rectangle 33"
+              width="2.643"
+              height="21.141"
+              transform="translate(17.54 2.591) rotate(45)"
+              fill="#37ff6c"
+            />
+          </svg>
+
+          <svg
+            id="doorwayUnder"
+            xmlns="http://www.w3.org/2000/svg"
+            width="4"
+            height="100%"
+            viewBox="0 0 3 111"
+          >
+            <rect
+              id="Rectangle_31"
+              data-name="Rectangle 31"
+              width="40"
+              height="3"
+              transform="translate(0 111) rotate(-90)"
+              fill="#d8d8d8"
+            />
+            <rect
+              id="Rectangle_29"
+              data-name="Rectangle 29"
+              width="41"
+              height="3"
+              transform="translate(0 41) rotate(-90)"
+              fill="#d8d8d8"
+            />
+          </svg>
+          <svg
+            id="doorwayUnder1"
+            xmlns="http://www.w3.org/2000/svg"
+            width="4"
+            height="100%"
+            viewBox="0 0 3 111"
+          >
+            <rect
+              id="Rectangle_31"
+              data-name="Rectangle 31"
+              width="40"
+              height="3"
+              transform="translate(0 111) rotate(-90)"
+              fill="#d8d8d8"
+            />
+            <rect
+              id="Rectangle_29"
+              data-name="Rectangle 29"
+              width="41"
+              height="3"
+              transform="translate(0 41) rotate(-90)"
+              fill="#d8d8d8"
+            />
+          </svg>
+        </div>
+        <div class="room N112b" data-room="N112b"></div>
+        <div class="room N112" data-room="N112"></div>
+      </div>
+    </div>
+  </div>
+  <img id="logo" src="../../assets/logo.svg" alt="logo" />
 </div>
