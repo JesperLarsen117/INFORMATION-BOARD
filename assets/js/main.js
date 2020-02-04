@@ -86,7 +86,7 @@ const chooseColors = className => {
   }
 };
 
-
+// Reloader side hvert minut.
 setInterval(() => {
   location.reload();
 }, 100000);
