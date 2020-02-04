@@ -1,0 +1,10 @@
+<div class="nyhedContainer">
+    <div>
+    <% for (let i =0; i < news.length;  i++ ) { %>
+        <div>
+        <h2><%- news[i].title -%></h2>
+    <p><%- news[i].content -%></p>
+    </div>    
+        <% } %>
+    </div>
+</div>
