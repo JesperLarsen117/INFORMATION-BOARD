@@ -73,25 +73,17 @@ module.exports = app => {
         if (schoolHour == hourNow-1 && schoolDays == dayNow) {
           // console.log("asd");
           names.push(element.name);
-                    // console.log(new Date(element.stamp * 1000).getDay());
             classnr.push(element.classroom);
             classNames.push(element.class);
             time.push(element.time);
         } else if(schoolHour == hourNow-1 && schoolDays == dayNow){
-          // console.log('asd');
+          // console.log('assd');
             names.push(element.name);
             classnr.push(element.classroom);
             classNames.push(element.class);
             time.push(element.time);
-        } else if(hourNow >= 15 && schoolHour == 7 && tomorrow == dayNow +1 || hourNow <= 8 && schoolHour == 7 && tomorrow == dayNow){
-          // console.log(element);
-                    // console.log(new Date(element.stamp * 1000).getDay());
-
-          // console.log(tomorrow == dayNow +1);
-          // console.log(dayNow);          
-          // console.log(tomorrow);
-          
-          
+        } else if(hourNow >= 15 && schoolHour == 7 && tomorrow == dayNow +1 || hourNow <= 8 && schoolHour == 7 && tomorrow == dayNow){          
+          // console.log('aw2sd');
           names.push(element.name);
           classnr.push(element.classroom);
           classNames.push(element.class);

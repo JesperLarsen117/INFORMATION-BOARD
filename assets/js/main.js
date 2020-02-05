@@ -57,7 +57,7 @@ function addColorAndText(classRoomElement, classNumber, name, className, time) {
     <p class="classNumber">${classNumber[i]}</p>
     <p class="className">${className[i]}</p>
     <p class="classType">${name[i]}</p>
-    <p class="classType">${time[i]}</p>`;
+    <p class="classTime">${time[i]}</p>`;
 
     document.getElementsByClassName(classNumber[i])[0].className =
       "room " + classNumber[i] + " " + chooseColors(className[i]);

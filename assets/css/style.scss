@@ -15,14 +15,14 @@ body {
 
 body,
 html {
-    // overflow: hidden;
+    overflow: hidden;
 }
 
 .activity {}
 
 .container {
     display: grid;
-    grid-template-columns: 20% 1fr;
+    grid-template-columns: 23% 1fr;
     grid-template-rows: 30% 1fr 1fr;
     height: 100vh;
     width: 100vw;
@@ -85,7 +85,7 @@ html {
 
 .classContainer {
     grid-template-rows: 1fr 1fr;
-    padding: 1em;
+    padding: 1.2em;
 }
 
 .underetage {
@@ -207,7 +207,7 @@ html {
 
         #doorwayUnder1 {
             position: absolute;
-            left: 55em;
+            left: 51em;
         }
 
         #doorway {
@@ -217,7 +217,7 @@ html {
 
         #doorway1 {
             position: absolute;
-            left: 51.5em;
+            left: 48.5em;
         }
     }
 
@@ -352,16 +352,16 @@ html {
 .uddannelser {
     position: absolute;
     top: 50%;
-    width:80%;
+    width: 78%;
     transform: translateY(-50%);
-    left:24em;
+    // left:24em;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     background:rgb(230, 230, 230);
     padding:10px;
     padding-left:40px;
     padding-right:40px;
-    gap: 2em;
+    gap: 1em;
 
     p {
         .blocks {
@@ -455,7 +455,14 @@ html {
     font-size: 80%;
     color: white;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    margin-top: 2em
+    margin-top: 1.4em
+}
+.classTime {
+    text-align: center;
+    font-size: 90%;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    margin-top: 1.4em
 }
 
 .magenta {
