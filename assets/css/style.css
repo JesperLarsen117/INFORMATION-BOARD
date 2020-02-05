@@ -28,7 +28,7 @@ body {
   padding: 1em;
   width: 100%;
   height: 100%;
-  border: 1px solid #a0a0a0;
+  background: white;
 }
 
 .container .nyhedContainer {
@@ -37,10 +37,9 @@ body {
   -ms-grid-row: 2;
   -ms-grid-row-span: 2;
   grid-row: 2 / 4;
-  padding: 1em;
   width: 100%;
   height: 100%;
-  border: 1px solid #a0a0a0;
+  background: whitesmoke;
 }
 
 .container .activityContainer {
@@ -51,24 +50,28 @@ body {
   grid-row: 1 / 4;
   width: 100%;
   height: 100%;
-  border: 1px solid #a0a0a0;
 }
 
 #localTime {
   position: absolute;
   bottom: .1em;
   left: .1em;
-  font-size: 2em;
+  font-size: 2.5em;
   font-weight: bold;
 }
 
 .header {
   font-weight: bold;
+  text-align: right;
   margin: 0 0 .5em 0;
 }
 
 .header span {
   font-weight: 100;
+}
+
+.header2 {
+  margin-top: 1.5em;
 }
 
 .classContainer {
@@ -78,7 +81,7 @@ body {
 }
 
 .underetage {
-  background-color: #e6e6e6;
+  background-color: #ffffff;
 }
 
 .roomContainer {
@@ -89,6 +92,7 @@ body {
 
 .schoolContainer {
   position: relative;
+  top: 5%;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[32];
@@ -159,6 +163,7 @@ body {
   display: inline-block;
   padding: .4em;
   color: white;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
   z-index: 200;
 }
 
@@ -391,19 +396,26 @@ body {
 .uddannelser {
   position: absolute;
   top: 50%;
+  width: 80%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  right: 5em;
+  left: 24em;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  background: #e6e6e6;
+  padding: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
   gap: 2em;
 }
 
 .uddannelser p .blocks {
   margin-right: 1em;
   display: inline-block;
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+          box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
   width: 15px;
   height: 15px;
 }
@@ -440,16 +452,20 @@ body {
   background-color: #2F2F2F;
 }
 
-.nyhedContainer {
-  padding: 1em 2em;
+.nyhedContainer h2 {
+  padding: .7em 0 .5em .3em;
+  background: #e4e4e4;
+  color: #2e2e2e;
+  border-bottom: 2px solid #cacaca;
 }
 
-.nyhedContainer h2 {
-  margin: 1em 0 .5em 0;
+.nyhedContainer p {
+  padding: .5em 1em .5em 1em;
+  color: #2e2e2e;
 }
 
 .nyhedContainer li {
-  margin: .5em .5em .5em 1em;
+  margin: .5em .5em .5em 1.7em;
 }
 
 #logo {

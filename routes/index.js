@@ -70,14 +70,15 @@ module.exports = app => {
           // console.log(new Date(element.stamp).getDay());
           // console.log(tomorrowDate.getDay());
 
-        if (schoolHour == hourNow-1 && tomorrow == dayNow) {
+        if (schoolHour == hourNow-1 && schoolDays == dayNow) {
           // console.log("asd");
           names.push(element.name);
                     // console.log(new Date(element.stamp * 1000).getDay());
             classnr.push(element.classroom);
             classNames.push(element.class);
             time.push(element.time);
-        } else if(schoolHour == hourNow && schoolDays == dayNow){
+        } else if(schoolHour == hourNow-1 && schoolDays == dayNow){
+          // console.log('asd');
             names.push(element.name);
             classnr.push(element.classroom);
             classNames.push(element.class);
