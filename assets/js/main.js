@@ -1,3 +1,4 @@
+
 function startTime() {
   let today = new Date();
   let h = today.getHours();
@@ -21,6 +22,7 @@ for (let i = 0; i < rooms.length; i++) {
   // Tilføjer de rigtige klasse nummere til alle html elementerne.
   rooms[i].innerHTML = `<p class="classNumber">${rooms[i].dataset.room}</p>`;
 }
+setInterval(() => {
 const request = async () => {
   const response = await fetch("/data");
   // laver response om til json format.
@@ -35,8 +37,16 @@ const request = async () => {
 
   const classRoom = document.getElementsByClassName("room");
   // kører addColorAndText functionen. Linje: 42
-  addColorAndText(rooms, classnr, names, classNames, time);
+  // addColorAndText(rooms, classnr, names, classNames, time);
 
+  const classRooms = document.getElementsByClassName('room')
+  for (let i = 0; i < classRooms.length; i++) {
+    const element = classRooms[i];
+    element.innerHTML = `<p class="classNumber">${element.dataset.room}</p>`;
+    element.className = "room " + element.dataset.room;
+    
+  }
+  addColorAndText(rooms, classnr, names, classNames, time);
 };
 request();
 
@@ -87,6 +97,5 @@ const chooseColors = className => {
 };
 
 // Reloader side hvert minut.
-setInterval(() => {
-  location.reload();
-}, 100000);
+
+}, 1000);

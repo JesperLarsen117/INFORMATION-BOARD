@@ -42,28 +42,55 @@ module.exports = app => {
     const names = [];
     const classNames = [];
     const time = [];
-
       for (let i = 0; i < activity.length; i++) {
         const element = activity[i];
         const dateNow = new Date();
+        const dayNow = dateNow.getDay();
         const hourNow = dateNow.getHours();
         const minutNow = dateNow.getMinutes();
         
         const schoolDate = new Date(element.stamp * 1000)
+        const tomorrowDate = new Date(element.stamp * 1000)
+        const tomorrow = tomorrowDate.getDay();
         const schoolHour = schoolDate.getHours() -1;
         const schoolMinut = schoolDate.getMinutes();
+        const schoolDays = schoolDate.getDay();
+        // console.log(dayNow);
+        // console.log(schoolDays == dayNow);
+        // console.log(schoolDays);
+        // console.log(schoolDays);
         
-        if (schoolHour == hourNow-1) {
+        if (tomorrow == dayNow +1) {
+          // console.log(new Date(element.stamp).getDay());
+        }
+        
+        
+        
+// console.log(schoolDay == dayNow +1);
+          // console.log(new Date(element.stamp).getDay());
+          // console.log(tomorrowDate.getDay());
+
+        if (schoolHour == hourNow-1 && tomorrow == dayNow) {
+          // console.log("asd");
+          names.push(element.name);
+                    // console.log(new Date(element.stamp * 1000).getDay());
+            classnr.push(element.classroom);
+            classNames.push(element.class);
+            time.push(element.time);
+        } else if(schoolHour == hourNow && schoolDays == dayNow){
             names.push(element.name);
             classnr.push(element.classroom);
             classNames.push(element.class);
             time.push(element.time);
-        } else if(schoolHour == hourNow){
-            names.push(element.name);
-            classnr.push(element.classroom);
-            classNames.push(element.class);
-            time.push(element.time);
-        } else if(hourNow >= 15 && schoolHour == 7 || hourNow < 8 && schoolHour == 7){
+        } else if(hourNow >= 15 && schoolHour == 7 && tomorrow == dayNow +1 || hourNow <= 8 && schoolHour == 7 && tomorrow == dayNow){
+          // console.log(element);
+                    // console.log(new Date(element.stamp * 1000).getDay());
+
+          // console.log(tomorrow == dayNow +1);
+          // console.log(dayNow);          
+          // console.log(tomorrow);
+          
+          
           names.push(element.name);
           classnr.push(element.classroom);
           classNames.push(element.class);
