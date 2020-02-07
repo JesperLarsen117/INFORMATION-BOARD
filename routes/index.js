@@ -56,21 +56,9 @@ module.exports = app => {
         const schoolHour = schoolDate.getHours() -1;
         const schoolMinut = schoolDate.getMinutes();
         const schoolDays = schoolDate.getDay();
-        // console.log(dayNow);
-        // console.log(schoolDays == dayNow);
-        // console.log(schoolDays);
-        // console.log(schoolDays);
-        
-        if (tomorrow == dayNow +1) {
-          // console.log(new Date(element.stamp).getDay());
-        }
         
         
-        
-// console.log(schoolDay == dayNow +1);
-          // console.log(new Date(element.stamp).getDay());
-          // console.log(tomorrowDate.getDay());
-
+        // 
         if (schoolHour == hourNow-1 && schoolDays == dayNow) {
           names.push(element.name);
             classnr.push(element.classroom);

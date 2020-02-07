@@ -1,6 +1,7 @@
 
 let nextVid = 0;
 const videos = [];
+// henter data fra api "http://localhost:5000/data"
 const request = async () => {
   const response = await fetch("/data");
   const json = await response.json();
@@ -15,7 +16,7 @@ const request = async () => {
 }
 
 
-
+// Hvis der media indholder nogent, så kør det her kode.
 if(media.length > 0){
 
   for (let i = 0; i < media.length; i++) {
@@ -90,4 +91,5 @@ function onPlayerStateChange(event) {
 onYouTubePlayerAPIReady();
 }
 
+// kører request funktion.
 request();

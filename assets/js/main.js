@@ -1,13 +1,17 @@
 // local time
 function startTime() {
   let today = new Date();
+  let d = today.getDay();
+  var weekday = ['Søndag', 'Mandag', 'Tirsdag', 
+            'Onsdag', 'Torsdag', 'Fredag', 'Lørdag' 
+        ]; 
   let h = today.getHours();
   let m = today.getMinutes();
   let s = today.getSeconds();
   h = checkTime(h);
   m = checkTime(m);
   s = checkTime(s);
-  document.getElementById("localTime").innerHTML = h + ":" + m;
+  document.getElementById("localTime").innerHTML = weekday[d] + " " + h + ":" + m;
   let t = setTimeout(startTime, 500);
 }
 function checkTime(i) {
@@ -30,7 +34,6 @@ const request = async () => {
   const json = await response.json();
 
   // laver response om til variabler, så de er nemmere at tilgå.
-  const colors = json.information.colors;
   const classnr = json.information.classnr;
   const names = json.information.names;
   const classNames = json.information.classNames;
@@ -49,6 +52,7 @@ const request = async () => {
   }
   addColorAndText(rooms, classnr, names, classNames, time);
 };
+// kører requst funktionen.
 request();
 
 // Tilføjer farverne og teksten i hver klasse.
@@ -97,20 +101,16 @@ const chooseColors = className => {
       break;
   }
 };
+//refresh data every 10 seconds
+}, 10000);
 
-// Reloader side hvert minut.
-
-}, 1000);
-
-
+// gets the news boxes.
 const news = document.getElementsByClassName('insideNews')[0]
 const news1 = document.getElementsByClassName('news-sections')[0]
 const news2 = document.getElementsByClassName('news-sections')[1]
-console.log(news1.clientHeight);
-
 let isAtTop = false
 let timeToWait = 4000;
-
+// scroll for the news articles, if the article box height is over 300.
 if (news1.clientHeight >= 300) {
   console.log("this is a large article");
   news1.style.transform = `translateY(-${news1.clientHeight - 300}px)`;
@@ -126,6 +126,7 @@ if (news2.clientHeight >= 300) {
 
 }
 
+// scrolls, the article to the bottom again.
 setInterval(() => {
   if (isAtTop == true) {
     timeToWait = 45000
@@ -153,8 +154,10 @@ setInterval(() => {
   }
 }, timeToWait);
 
-// h1 58,8
-// all 856,19
+// Reload åage every two hours.
+setInterval(() => {
+  location.reload();
+}, 7200000);
 
 
 
