@@ -1,10 +1,14 @@
 <div class="nyhedContainer">
-    <div>
+    <div class="insideNews">
     <% for (let i =0; i < news.length;  i++ ) { %>
-        <div>
-        <h2>&#9660;<%-  news[i].title -%></h2>
-    <p><%- news[i].content -%></p>
-    </div>    
+        <div class="news-frame">
+            <h2>&#9660;<%-  news[i].title -%></h2>
+
+            <div class="news-sections">
+                <p><%- news[i].content -%></p>
+            </div>
+        </div>
         <% } %>
     </div>
 </div>
+

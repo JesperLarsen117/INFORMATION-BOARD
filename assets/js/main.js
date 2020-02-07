@@ -1,4 +1,4 @@
-
+// local time
 function startTime() {
   let today = new Date();
   let h = today.getHours();
@@ -7,7 +7,7 @@ function startTime() {
   h = checkTime(h);
   m = checkTime(m);
   s = checkTime(s);
-  document.getElementById("localTime").innerHTML = h + ":" + m + ":" + s;
+  document.getElementById("localTime").innerHTML = h + ":" + m;
   let t = setTimeout(startTime, 500);
 }
 function checkTime(i) {
@@ -16,6 +16,7 @@ function checkTime(i) {
   } // add zero in front of numbers < 10
   return i;
 }
+// local time
 
 const rooms = document.getElementsByClassName("room");
 for (let i = 0; i < rooms.length; i++) {
@@ -53,15 +54,16 @@ request();
 // Tilføjer farverne og teksten i hver klasse.
 function addColorAndText(classRoomElement, classNumber, name, className, time) {
   for (var i = 0; i < classRoomElement.length; i++) {
-    document.getElementsByClassName(classNumber[i])[0].innerHTML = `
-    <p class="classNumber">${classNumber[i]}</p>
-    <p class="className">${className[i]}</p>
-    <p class="classType">${name[i]}</p>
-    <p class="classTime">${time[i]}</p>`;
-
-    document.getElementsByClassName(classNumber[i])[0].className =
-      "room " + classNumber[i] + " " + chooseColors(className[i]);
+    if (classNumber[i] != undefined || className[i] != undefined || name[i] != undefined || time[i] != undefined || className[i] != undefined ) {
+      document.getElementsByClassName(classNumber[i])[0].innerHTML = `
+      <p class="classNumber">${classNumber[i]}</p>
+      <p class="className">${className[i]}</p>
+      <p class="classType">${name[i]}</p>
+      <p class="classTime">${time[i]}</p>`;
+      document.getElementsByClassName(classNumber[i])[0].className =
+        "room " + classNumber[i] + " " + chooseColors(className[i]);
   }
+}
 }
 
 // Vælger farver ud fra klasse.
@@ -99,3 +101,60 @@ const chooseColors = className => {
 // Reloader side hvert minut.
 
 }, 1000);
+
+
+const news = document.getElementsByClassName('insideNews')[0]
+const news1 = document.getElementsByClassName('news-sections')[0]
+const news2 = document.getElementsByClassName('news-sections')[1]
+console.log(news1.clientHeight);
+
+let isAtTop = false
+let timeToWait = 4000;
+
+if (news1.clientHeight >= 300) {
+  console.log("this is a large article");
+  news1.style.transform = `translateY(-${news1.clientHeight - 300}px)`;
+  isAtTop = true
+  timeToWait = 45000 
+}
+
+if (news2.clientHeight >= 300) {
+  console.log("this is a large article");
+  news2.style.transform = `translateY(-${news2.clientHeight - 300}px)`;
+  isAtTop = true
+  timeToWait = 45000 
+
+}
+
+setInterval(() => {
+  if (isAtTop == true) {
+    timeToWait = 45000
+    console.log('at top');
+    news1.style.transform = `translateY(0px)`;
+    news2.style.transform = `translateY(0px)`;
+    isAtTop = false;
+    news1.classList = "news-sections-up";
+    news2.classList = "news-sections-up";
+
+  } else {
+    if (news1.clientHeight >= 300) {
+      timeToWait = 2000 
+      console.log("this is a large article");
+      news1.classList = "news-sections";
+      news1.style.transform = `translateY(-${news1.clientHeight - 300}px)`; 
+
+    }
+    if (news2.clientHeight >= 300) {
+      timeToWait = 2000 
+      news2.style.transform = `translateY(-${news2.clientHeight- 300}px)`;
+      isAtTop = true;
+      news2.classList = "news-sections";
+  }
+  }
+}, timeToWait);
+
+// h1 58,8
+// all 856,19
+
+
+
